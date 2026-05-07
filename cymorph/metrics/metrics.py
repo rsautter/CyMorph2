@@ -100,12 +100,12 @@ class Metrics():
 				if kwargs is not None:
 					if 'percent' in kwargs.keys():
 						args['percent'] = kwargs['percent']
-				results[m] = eta.entropy(filtered,['Shannon'],['Histogram'],*args)
+				results[m] = list(eta.entropy(filtered,['Shannon'],['Histogram'],*args).values())[0]
 			elif m == 'sqH':
 				if kwargs is not None:
 					if 'percent' in kwargs.keys():
 						args['percent'] = kwargs['percent']
-				results[m] = eta.entropy(filtered,['PowerlawTsallis'],['Histogram'],*args)
+				results[m] = list(eta.entropy(filtered,['PowerlawTsallis'],['Histogram'],*args).values())[0]
 				
 			elif m == 'spH':
 				if kwargs is not None:
@@ -113,14 +113,14 @@ class Metrics():
 						args['nx'] = kwargs['nx']
 					if 'ny' in kwargs.keys():
 						args['ny'] = kwargs['ny']
-				results[m] = eta.entropy(filtered,['Shannon'],['Permutation'],*args)
+				results[m] = list(eta.entropy(filtered,['Shannon'],['Permutation'],*args).values())[0]
 			elif m == 'spq':
 				if kwargs is not None:
 					if 'nx' in kwargs.keys():
 						args['nx'] = kwargs['nx']
 					if 'ny' in kwargs.keys():
 						args['ny'] = kwargs['ny']
-				results[m] = eta.entropy(filtered,['PowerlawTsallis'],['Permutation'],*args)
+				results[m] = list(eta.entropy(filtered,['PowerlawTsallis'],['Permutation'],*args).values())[0]
 			'''
 			elif m =='g1':
 				results[m] = ga(filtered.astype(float),["G1C"])["G1C"]
