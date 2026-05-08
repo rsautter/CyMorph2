@@ -8,7 +8,7 @@ authors = [
 license = { text = "BSD 3-Clause License" }
 dependencies = [
     "numpy",
-    "GPA",
+    "gpa-python",
     "eta",
     "petrofit"
 ]
